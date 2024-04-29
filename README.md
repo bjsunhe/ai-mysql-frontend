@@ -1,6 +1,6 @@
-show the manual of DSNU-S-8-25-P-A-MQ
+# show the manual of DSNU-S-8-25-P-A-MQ
 MannualLink: https://www.festo.com/media/pim/046/D15000100152046.PDF
-list the OrderCode of all the entries with a stroke of 25 mm
+# list the OrderCode of all the entries with a stroke of 25 mm
 OrderCode: DSNU-S-12-25-P-A-MQ
 OrderCode: DSNU-S-16-25-P-A-MQ
 OrderCode: DSNU-S-16-25-PPS-A-MQ
@@ -9,9 +9,9 @@ OrderCode: DSNU-S-20-25-PPS-A-MX
 OrderCode: DSNU-S-25-25-P-A-MX
 OrderCode: DSNU-S-25-25-PPS-A-MX
 OrderCode: DSNU-S-8-25-P-A-MQ
-how many entries with a stroke of 25mm
+# how many entries with a stroke of 25mm
 COUNT(*): 8
-list all the different stroke 
+# list all the different stroke 
 Stroke: 15 mm
 Stroke: 100 mm
 Stroke: 1 mm ... 150 mm
@@ -28,11 +28,16 @@ Stroke: 60 mm
 Stroke: 80 mm
 Stroke: 200 mm
 Stroke: 1 mm ... 100 mm
-how many different Stroke 
+# how many different Stroke 
 COUNT(DISTINCT Stroke): 16
-how many entries in the table
+# how many entries in the table
 COUNT(*): 96
 
+
+
+# how many attribute round cylinder have
+
+# give me an example
 
 how many entries in the table
 
