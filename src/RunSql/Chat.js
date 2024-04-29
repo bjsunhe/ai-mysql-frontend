@@ -81,8 +81,9 @@ const Chat = () => {
       // const materials=await fetch('http://localhost:8090/api/material-delivery/find-material-by-materialid',{
         console.log(previousQuestions)
 
+        // "http://34.125.249.167:8090/api/ai/run-sql",
       const process = await fetch(
-        "http://localhost:8090/api/ai/run-sql",
+        "http://34.125.249.167:8090/api/ai/run-sql",
         {
           method: "POST",
           headers: {
@@ -108,7 +109,7 @@ const Chat = () => {
         
       ]);
 
-      if(containsHttp(data.result[0][Object.keys(data.result[0])[0]])){
+      if(data.result[0]&&containsHttp(data.result[0][Object.keys(data.result[0])[0]])){
         window.open(data.result[0][Object.keys(data.result[0])[0]], '_blank', 'noopener,noreferrer');
       }
     });

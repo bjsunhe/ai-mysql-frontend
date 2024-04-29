@@ -2,6 +2,8 @@ how many entries in the table
 
 SELECT COUNT(*) FROM festo_round_cylinder;
 
+how many attributes round cylinder have
+
 
 
 how many different Stroke in the table
@@ -16,8 +18,6 @@ how many entries with a stroke of 25mm
 SELECT COUNT(*) FROM festo_round_cylinder WHERE Stroke = '25 mm';
 
 
-list all the entries with a stroke of 25 mm
-SELECT * FROM festo_round_cylinder WHERE Stroke = '25 mm';
 
 
 list the OrderCode of all the entries with a stroke of 25 mm
