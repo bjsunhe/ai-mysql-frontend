@@ -77,8 +77,10 @@ const Chat = () => {
 }
   const onFinish = (values) => {
     console.log(values.ask.toString());
-    async function processCount(sql) {
+    async function processCount(sql,previousQuestions) {
       // const materials=await fetch('http://localhost:8090/api/material-delivery/find-material-by-materialid',{
+        console.log(previousQuestions)
+
       const process = await fetch(
         "http://localhost:8090/api/ai/run-sql",
         {
@@ -88,6 +90,7 @@ const Chat = () => {
           },
           body: JSON.stringify({
             sql,
+            previousQuestions
           }),
         }
       );
@@ -95,7 +98,7 @@ const Chat = () => {
       return process.json();
     }
 
-    processCount(values.ask.toString()).then((data) => {
+    processCount(values.ask.toString(),questionList.map(q=>q.question)).then((data) => {
       console.log(data);
       
 
