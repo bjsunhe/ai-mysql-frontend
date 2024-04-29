@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 import "./Chat.css";
+import AnswerList from "../AnswerList/AnswerList";
 
 import { Input, Space, Button } from "antd";
 import { Avatar, List } from "antd";
@@ -70,9 +71,12 @@ const Chat = () => {
       // setQuestionList([{ question: value, answer: data.sql }, ...questionList]);
     });
   };
-
+  function containsHttp(url) {
+    const httpRegex = /http(s)?:\/\//;
+    return httpRegex.test(url);
+}
   const onFinish = (values) => {
-    console.log(values.sql.toString());
+    console.log(values.ask.toString());
     async function processCount(sql) {
       // const materials=await fetch('http://localhost:8090/api/material-delivery/find-material-by-materialid',{
       const process = await fetch(
@@ -91,14 +95,19 @@ const Chat = () => {
       return process.json();
     }
 
-    processCount(values.sql.toString()).then((data) => {
+    processCount(values.ask.toString()).then((data) => {
       console.log(data);
       
 
       setQuestionList([
-        { question: "Result from Process Database", answer: JSON.stringify(data.result) },
+        { question: values.ask.toString(), answer: JSON.stringify(data.result) },
+        ...questionList
         
       ]);
+
+      if(containsHttp(data.result[0][Object.keys(data.result[0])[0]])){
+        window.open(data.result[0][Object.keys(data.result[0])[0]], '_blank', 'noopener,noreferrer');
+      }
     });
     
   };
@@ -146,6 +155,8 @@ const Chat = () => {
     history.push(e.key)
   };
 
+
+
   return (
     <>
     <Menu
@@ -162,7 +173,7 @@ const Chat = () => {
             mode="inline"
             items={items}
           />
-      <h1>Process Database - Run SQL</h1>
+      <h1>BMG Function Finder - GenAI</h1>
       
       <div id="search-container">
         <div id="search-control">
@@ -178,7 +189,7 @@ const Chat = () => {
                 
               }}
             >
-              <Form.Item  label="SQL"  name="sql">
+              <Form.Item  label="ASK"  name="ask">
                 <Input.TextArea rows={20}/>
               </Form.Item>
               <Form.Item
@@ -188,7 +199,7 @@ const Chat = () => {
                 }}
               >
                 <Button type="primary" htmlType="submit">
-                  Run SQL
+                  GenAI
                 </Button>
               </Form.Item>
             </Form>
@@ -197,7 +208,7 @@ const Chat = () => {
         </div>
 
         <div id="search-result">
-          <List
+          {/* <List
             className="question-list"
             itemLayout="horizontal"
             dataSource={questionList}
@@ -214,7 +225,12 @@ const Chat = () => {
                 />
               </List.Item>
             )}
-          />
+          /> */}
+
+{
+  questionList.map(question=>(<AnswerList question={question} />))
+}
+
           <div>
             {/* <svg
       width="1600"
