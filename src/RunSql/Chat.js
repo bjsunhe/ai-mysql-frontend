@@ -193,7 +193,7 @@ const Chat = () => {
                 
               }}
             >
-              <Form.Item  label="ASK"  name="ask">
+              <Form.Item  label="Ask"  name="ask">
                 <Input.TextArea rows={20}/>
               </Form.Item>
               <Form.Item

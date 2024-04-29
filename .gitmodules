@@ -1,0 +1,4 @@
+[submodule "build"]
+	path = build
+	url = https://github.com/bjsunhe/ai-sql-frontend-build.git
+	branch = main
