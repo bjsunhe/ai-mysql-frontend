@@ -1,3 +1,39 @@
+show the manual of DSNU-S-8-25-P-A-MQ
+MannualLink: https://www.festo.com/media/pim/046/D15000100152046.PDF
+list the OrderCode of all the entries with a stroke of 25 mm
+OrderCode: DSNU-S-12-25-P-A-MQ
+OrderCode: DSNU-S-16-25-P-A-MQ
+OrderCode: DSNU-S-16-25-PPS-A-MQ
+OrderCode: DSNU-S-20-25-P-A-MX
+OrderCode: DSNU-S-20-25-PPS-A-MX
+OrderCode: DSNU-S-25-25-P-A-MX
+OrderCode: DSNU-S-25-25-PPS-A-MX
+OrderCode: DSNU-S-8-25-P-A-MQ
+how many entries with a stroke of 25mm
+COUNT(*): 8
+list all the different stroke 
+Stroke: 15 mm
+Stroke: 100 mm
+Stroke: 1 mm ... 150 mm
+Stroke: 10 mm
+Stroke: 150 mm
+Stroke: 25 mm
+Stroke: 125 mm
+Stroke: 20 mm
+Stroke: 40 mm
+Stroke: 30 mm
+Stroke: 50 mm
+Stroke: 1 mm ... 200 mm
+Stroke: 60 mm
+Stroke: 80 mm
+Stroke: 200 mm
+Stroke: 1 mm ... 100 mm
+how many different Stroke 
+COUNT(DISTINCT Stroke): 16
+how many entries in the table
+COUNT(*): 96
+
+
 how many entries in the table
 
 SELECT COUNT(*) FROM festo_round_cylinder;
