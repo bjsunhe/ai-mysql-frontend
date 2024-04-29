@@ -83,3 +83,33 @@ SELECT ProductLink FROM festo_round_cylinder WHERE OrderCode = 'DSNU-S-12-25-P-A
 show me the manul
 
 SELECT MannualLink FROM festo_round_cylinder WHERE OrderCode = 'DSNU-S-12-25-P-A-MQ';
+
+
+brew install hugo
+
+hugo new site theblog
+
+hugo server
+
+hugo new posts/new.md
+
+git clone submodule.git
+
+git checkout -b main
+
+touch README.md
+
+git add
+git commit -m 'add'
+git push origin main
+
+
+git submodule add -b main submodule.git  build 
+
+hugo -t contrast-hugo
+
+cd build
+
+
+
+
